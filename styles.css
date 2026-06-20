@@ -58,7 +58,7 @@ body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var
 .hero-sub strong{font-weight:600;color:var(--text)}
 
 /* Impact Row */
-.impact-row{display:flex;justify-content:center;align-items:center;gap:1.25rem;padding:.65rem 1.25rem;max-width:580px;margin:0 auto;background:linear-gradient(135deg,rgba(67,56,202,.03),rgba(99,102,241,.04));border:1px solid rgba(99,102,241,.07);border-radius:8px;animation:fadeIn .5s ease .2s both}
+.impact-row{display:flex;justify-content:center;align-items:center;gap:2.5rem;padding:.65rem 2rem;max-width:720px;margin:0 auto;background:linear-gradient(135deg,rgba(67,56,202,.03),rgba(99,102,241,.04));border:1px solid rgba(99,102,241,.07);border-radius:8px;animation:fadeIn .5s ease .2s both}
 .impact-item{display:flex;flex-direction:column;align-items:center;text-align:center}
 .impact-inline{display:inline-flex;align-items:baseline;gap:2px;white-space:nowrap}
 .impact-num{font-size:1.05rem;font-weight:800;color:var(--accent);line-height:1}
@@ -137,10 +137,10 @@ body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var
 
 /* Role Hero */
 .role-hero{padding:1.75rem 2rem .75rem;text-align:center}
-.role-hero-content{max-width:600px;margin:0 auto}
+.role-hero-content{max-width:700px;margin:0 auto}
 .role-hero-badge{display:inline-flex;align-items:center;gap:6px;padding:4px 14px;border-radius:50px;background:rgba(0,51,141,.06);border:1px solid rgba(0,51,141,.12);color:#00338D;font-size:.65rem;font-weight:600;letter-spacing:.5px;text-transform:uppercase;margin-bottom:.5rem}
-.role-hero-title{font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:800;letter-spacing:-.6px;line-height:1.1;margin-bottom:.3rem;color:var(--text)}
-.role-hero-sub{font-size:.88rem;color:var(--muted);max-width:460px;margin:0 auto;line-height:1.5}
+.role-hero-title{font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:800;letter-spacing:-1px;line-height:1.1;margin-bottom:.5rem;color:var(--text)}
+.role-hero-sub{font-size:.95rem;color:var(--text-secondary);max-width:520px;margin:0 auto;line-height:1.5}
 
 /* Role Stats Strip */
 .role-stats{display:flex;justify-content:center;align-items:center;gap:1.5rem;padding:.6rem 1rem;max-width:520px;margin:.5rem auto .75rem}
