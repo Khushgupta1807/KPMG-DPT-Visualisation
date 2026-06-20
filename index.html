@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KPMG Demand Planning Tool — Architecture & Role</title>
+    <meta name="description" content="Interactive architecture of the KPMG Demand Planning Tool and internship role overview — outlier correction, segmentation, forecasting, inventory optimization, and S&OP workflows.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="nav" id="mainNav">
+        <div class="nav-inner">
+            <div class="nav-tabs">
+                <button class="nav-tab active" data-page="viz" id="tabViz">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    Project Visualization
+                </button>
+                <button class="nav-tab" data-page="role" id="tabRole">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    My Role
+                </button>
+            </div>
+            <a href="https://www.linkedin.com/in/khush-gupta/" target="_blank" rel="noopener" class="nav-linkedin" title="Connect on LinkedIn">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+        </div>
+    </nav>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- PAGE 1: PROJECT VISUALIZATION          -->
+    <!-- ═══════════════════════════════════════ -->
+    <div class="page active" id="pageViz">
+
+        <!-- Hero -->
+        <header class="hero" id="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">KPMG Demand Planning <span class="accent">Tool</span></h1>
+                <p class="hero-sub"><strong>End-to-end demand planning platform — 6 engines, 15+ ML models, 10K SKUs/day — designed, built, and deployed at KPMG.</strong></p>
+            </div>
+        </header>
+
+        <!-- Impact Row -->
+        <section class="impact-row" id="impactRow">
+            <div class="impact-item">
+                <span class="impact-inline"><span class="impact-num" data-target="60">0</span><span class="impact-suffix">+ hrs/month</span></span>
+                <span class="impact-label">Manual effort saved</span>
+            </div>
+            <div class="impact-divider"></div>
+            <div class="impact-item">
+                <span class="impact-inline"><span class="impact-num" data-target="70">0</span><span class="impact-suffix">%</span></span>
+                <span class="impact-label">Faster forecast cycles</span>
+            </div>
+            <div class="impact-divider"></div>
+            <div class="impact-item">
+                <span class="impact-inline"><span class="impact-num" data-target="10000" data-format="comma">0</span><span class="impact-suffix">+</span></span>
+                <span class="impact-label">SKUs processed daily</span>
+            </div>
+            <p class="impact-context">Impact measured across the client's FMCG demand planning operations</p>
+        </section>
+
+        <!-- Pipeline -->
+        <section class="pipeline" id="pipeline">
+            <canvas class="pipeline-canvas" id="pipelineCanvas"></canvas>
+            <div class="pipeline-grid" id="pipelineGrid"></div>
+        </section>
+
+        <!-- Modal -->
+        <div class="modal-overlay" id="modalOverlay">
+            <div class="modal" id="modal">
+                <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
+                <div class="modal-head">
+                    <span class="modal-badge" id="modalBadge"></span>
+                    <h3 class="modal-title" id="modalTitle"></h3>
+                </div>
+                <p class="modal-desc" id="modalDesc"></p>
+                <div class="modal-steps" id="modalSteps"></div>
+            </div>
+        </div>
+
+        <!-- Tech Stack -->
+        <section class="tech-section" id="tech">
+            <h2 class="tech-heading">Technology Stack</h2>
+            <div class="tech-row">
+                <div class="tech-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" width="18" height="18" alt="Python"> Python</div>
+                <div class="tech-pill"><svg width="18" height="18" viewBox="0 0 24 24"><rect fill="#054ADA" width="24" height="24" rx="4"/><text x="12" y="16" text-anchor="middle" font-size="8" font-weight="700" fill="#fff" font-family="Inter,sans-serif">TM1</text></svg> IBM Planning Analytics</div>
+                <div class="tech-pill"><svg width="18" height="18" viewBox="0 0 24 24"><path d="M4 8h16M4 12h12M4 16h14" stroke="#4338ca" stroke-width="2.5" stroke-linecap="round" fill="none"/></svg> REST API</div>
+                <div class="tech-pill"><svg width="18" height="18" viewBox="0 0 24 24"><path d="M3 20L7 4M10 20l4-12 4 12M21 12H13" stroke="#d4883a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg> ARIMA / SARIMAX</div>
+                <div class="tech-pill"><svg width="18" height="18" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="#0081FB" stroke-width="2"/><path d="M8 16V10l4 3 4-7v10" stroke="#0081FB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg> Prophet</div>
+                <div class="tech-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg" width="18" height="18" alt="TensorFlow"> LSTM / TensorFlow</div>
+                <div class="tech-pill"><svg width="18" height="18" viewBox="0 0 24 24"><path d="M3 18L8 6l4 8 5-10 4 14" stroke="#8e5ea2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg> TBATS / Holt-Winters</div>
+                <div class="tech-pill"><svg width="18" height="18" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="18" rx="3" fill="none" stroke="#2980b9" stroke-width="2"/><path d="M6 9h5M6 13h8M13 9h5M6 17h4" stroke="#2980b9" stroke-width="1.5" stroke-linecap="round"/></svg> PAW Dashboards</div>
+                <div class="tech-pill"><svg width="18" height="18" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="3" fill="#217346"/><path d="M6 7h4v2H6zM6 11h4v2H6zM6 15h4v2H6zM12 7h4v2h-4zM12 11h4v2h-4zM12 15h4v2h-4z" fill="rgba(255,255,255,0.85)"/></svg> Excel</div>
+            </div>
+        </section>
+
+        <!-- Built By -->
+        <section class="built-by" id="builtBy">
+            <div class="built-by-inner">
+                <div class="built-by-label">Built by</div>
+                <h3 class="built-by-name">Khush Gupta</h3>
+                <p class="built-by-info">Electronics Engineering, Punjab Engineering College</p>
+                <p class="built-by-info">Internship at KPMG Gurugram · Jan–Jun 2025</p>
+                <p class="built-by-mentorship">Under the mentorship of</p>
+                <p class="built-by-info muted">Sneh Goyal, Associate Director, KPMG</p>
+                <p class="built-by-info muted">Atul Joshi, Associate Director, KPMG</p>
+                <a href="https://www.linkedin.com/in/khush-gupta/" target="_blank" rel="noopener" class="linkedin-btn">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    Connect on LinkedIn
+                </a>
+            </div>
+        </section>
+
+        <footer class="footer"><a href="https://www.linkedin.com/in/khush-gupta/" target="_blank" rel="noopener" class="footer-link">Questions? Let's connect →</a> · <a href="https://github.com/Khushgupta1807/KPMG-DPT-Visualisation" target="_blank" rel="noopener" class="footer-link">GitHub</a></footer>
+
+    </div>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- PAGE 2: MY ROLE                        -->
+    <!-- ═══════════════════════════════════════ -->
+    <div class="page" id="pageRole">
+
+        <!-- Role Header -->
+        <header class="role-hero">
+            <div class="role-hero-content">
+                <div class="role-hero-badge">
+                    <svg width="14" height="14" viewBox="0 0 24 24"><polygon points="12,2 3,7 3,17 12,22 21,17 21,7" fill="none" stroke="#00338D" stroke-width="2"/><text x="12" y="15" text-anchor="middle" font-size="7" font-weight="800" fill="#00338D" font-family="Inter,sans-serif">K</text></svg>
+                    Jan – Jun 2025 · KPMG, Gurugram
+                </div>
+                <h1 class="role-hero-title">My <span class="accent">Role</span></h1>
+                <p class="role-hero-sub"><strong>Designed, built, and delivered every module end-to-end.</strong></p>
+            </div>
+        </header>
+
+        <!-- Impact Stats -->
+        <div class="role-stats">
+            <div class="role-stat"><span class="role-stat-num">6</span><span class="role-stat-label">Engines Built</span></div>
+            <div class="role-stat-divider"></div>
+            <div class="role-stat"><span class="role-stat-num">15+</span><span class="role-stat-label">ML Models</span></div>
+            <div class="role-stat-divider"></div>
+            <div class="role-stat"><span class="role-stat-num">10K+</span><span class="role-stat-label">SKUs/Day</span></div>
+            <div class="role-stat-divider"></div>
+            <div class="role-stat"><span class="role-stat-num">20+</span><span class="role-stat-label">TM1 Cubes</span></div>
+        </div>
+
+        <!-- 3-Column Role Cards -->
+        <section class="role-columns">
+
+            <!-- Col 1: Technical -->
+            <div class="role-col">
+                <div class="role-col-head" style="border-color:#4338ca">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4338ca" stroke-width="2" stroke-linecap="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    <h3>Technical Engineering</h3>
+                </div>
+                <ul class="role-list">
+                    <li>Built <strong>all backend engines</strong> (outlier correction, segmentation, rules, inventory) from scratch in Python</li>
+                    <li><strong>15+ ML/statistical models</strong> with automated RMSE-based selection (ARIMA, Prophet, LSTM, TBATS)</li>
+                    <li>REST API pipelines to TM1 with <strong>multi-threaded scripts → 40% faster</strong> processing</li>
+                    <li>Role-based <strong>PAW dashboards</strong> and interactive frontend screens</li>
+                    <li>Production hardening — <strong>RBAC, dimension security</strong>, unit tests, QA sandbox, and nightly batch jobs within <strong>2-hour SLA</strong></li>
+                </ul>
+            </div>
+
+            <!-- Col 2: Business -->
+            <div class="role-col">
+                <div class="role-col-head" style="border-color:#d4883a">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d4883a" stroke-width="2" stroke-linecap="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                    <h3>Business Consulting</h3>
+                </div>
+                <ul class="role-list">
+                    <li>Led <strong>requirement gathering</strong> — mapped user needs into technical deliverables</li>
+                    <li>Deep domain expertise: <strong>S&OP workflows, ABC-XYZ, supply chain KPIs</strong></li>
+                    <li>Automated <strong>business rules</strong> eliminating manual SKU tagging by planners</li>
+                    <li>Facilitated <strong>UAT sessions</strong> with demand planners for usability refinement</li>
+                    <li>Defined <strong>KPI frameworks</strong> — forecast accuracy, bias, and service-level targets for executive reporting</li>
+                </ul>
+            </div>
+
+            <!-- Col 3: Delivery -->
+            <div class="role-col">
+                <div class="role-col-head" style="border-color:#1a8a5c">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1a8a5c" stroke-width="2" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    <h3>Project Delivery</h3>
+                </div>
+                <ul class="role-list">
+                    <li><strong>Agile sprints</strong> with regular scrum ceremonies</li>
+                    <li>Internal <strong>demos + stakeholder reviews</strong> for continuous alignment</li>
+                    <li>Authored <strong>client-facing docs</strong> — flowcharts, architecture diagrams, guides</li>
+                    <li><strong>Production-ready code</strong> with logging, config, and scalability</li>
+                    <li>Delivered all <strong>6 modules on schedule</strong> across a 6-month engagement timeline</li>
+                </ul>
+            </div>
+
+        </section>
+
+        <!-- CTA -->
+        <section class="role-cta">
+            <button class="role-cta-btn" id="ctaToViz">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                View Project Visualization →
+            </button>
+        </section>
+
+        <!-- Built By -->
+        <section class="built-by">
+            <div class="built-by-inner">
+                <div class="built-by-label">Built by</div>
+                <h3 class="built-by-name">Khush Gupta</h3>
+                <p class="built-by-info">Electronics Engineering, Punjab Engineering College</p>
+                <p class="built-by-info">Internship at KPMG Gurugram · Jan–Jun 2025</p>
+                <p class="built-by-mentorship">Under the mentorship of</p>
+                <p class="built-by-info muted">Sneh Goyal, Associate Director, KPMG</p>
+                <p class="built-by-info muted">Atul Joshi, Associate Director, KPMG</p>
+                <a href="https://www.linkedin.com/in/khush-gupta/" target="_blank" rel="noopener" class="linkedin-btn">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    Connect on LinkedIn
+                </a>
+            </div>
+        </section>
+
+        <footer class="footer"><span class="footer-disclaimer">All data and client-identifying details have been generalized. Shared with appropriate permissions.</span><br><a href="https://www.linkedin.com/in/khush-gupta/" target="_blank" rel="noopener" class="footer-link">Questions? Let's connect →</a> · <a href="https://github.com/Khushgupta1807/KPMG-DPT-Visualisation" target="_blank" rel="noopener" class="footer-link">GitHub</a></footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
